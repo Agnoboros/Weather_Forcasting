@@ -62,7 +62,7 @@ class Mapping():
         m.save(f"C:/Users/anper/Desktop/Programlama_projeler/{str(dispName)}_map.html")
         
 
-def main(): # The example code for the operations
+def main(): # The example code to show operation
     import time
     from random import random
 
@@ -82,17 +82,20 @@ def main(): # The example code for the operations
         time_now = time.ctime()
         print(time_now)
 
-        temp = m.Temperature(URL)
-        lat, lon = m.Coordinates(URL)
+        temp = m.Temperature(URL)    # Getting the temperature data
+        lat, lon = m.Coordinates(URL)# Getting the coordinate data
 
         delta = random()
-        delta = delta/100   # delta variable just used for the randomization fo varibales to show proper values on the map
+        delta = delta/100   # delta variable just used for the randomization of varibales to show proper values on the map
         # these delta variable have to deleted after GPS integration done.
 
-        DATA_FRAME.append([lat+(delta*random()*1.6),lon+(delta*random()*1.2),temp+(100*(random()+0.5)*delta-(random()-random())*100 )])
-        BASE_DATA_FRAME.append(DATA_FRAME[0])
+        # The DATA_FRAME should be a proper values. Which values came from the excat Coordinates Function
+        DATA_FRAME.append([lat+(delta*random()*1.6),lon+(delta*random()*1.2), 
+                           temp+(100*(random()+0.5)*delta-(random()-random())*100)])
+        # Randomize data frame
+        BASE_DATA_FRAME.append(DATA_FRAME[0]) # Whole data frame
 
-        m.Mapping(URL_map=URL, heatMapping = True, dataFrame=BASE_DATA_FRAME, Zoom=16, dispName="TEST")
+        m.Mapping(URL_map=URL, heatMapping = True, dataFrame=BASE_DATA_FRAME, Zoom=16, dispName="TEST") # Updating the map
 
 if __name__ == "__main__":
     main()
