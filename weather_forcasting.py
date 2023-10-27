@@ -37,9 +37,7 @@ class Mapping():
         return response
 
     def Coordinates(URL_coor) -> float: #Coordinates of the locations by their names
-
         response = Mapping.Status(URL_coor)
-
         data_ = response.json()
         Lat, Lon = float(data_["feeds"][1]["field1"]), float(data_["feeds"][1]["field2"])   # Extracting the coordinate variabes (latitude and longitude) from the WEB data base
         coordinates = Lat, Lon
@@ -51,14 +49,11 @@ class Mapping():
         temperature = float(data_["feeds"][0]["field3"])
         return temperature  # returning the temperature variable as float form
 
-
     def Mapping( URL_map, heatMapping:bool = True, dataFrame:list[list[float]] = [[]], Zoom:int=14, dispName:str= 'Show'):    # Creating the maps by their locations
-
         C = Mapping.Coordinates(URL_coor=URL_map)
         m = folium.Map(location = C, zoom_start = Zoom)
         if heatMapping: #Adding the heat values on the map
             HeatMap(data= dataFrame).add_to(m)
-
         m.save(f"C:/Users/anper/Desktop/Programlama_projeler/{str(dispName)}_map.html")
         
 
