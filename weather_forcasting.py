@@ -92,7 +92,7 @@ def main(): # The example code for the operations
         DATA_FRAME.append([lat+(delta*random()*1.6),lon+(delta*random()*1.2),temp+(100*(random()+0.5)*delta-(random()-random())*100 )])
         BASE_DATA_FRAME.append(DATA_FRAME[0])
 
-        m.Mapping(URL_map=URL, heatMapping = True, dataFrame=BASE_DATA_FRAME, Zoom=16, dispName="Deneme")
+        m.Mapping(URL_map=URL, heatMapping = True, dataFrame=BASE_DATA_FRAME, Zoom=16, dispName="TEST")
 
 if __name__ == "__main__":
     main()
