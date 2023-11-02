@@ -52,7 +52,7 @@ def Mapping( URL_map, heatMapping:bool = True, dataFrame:list[list[float]] = [[]
     m = folium.Map(location = C, zoom_start = Zoom)
     if heatMapping: #Adding the heat values on the map
         HeatMap(data= dataFrame).add_to(m)
-    m.save(f"C:/Users/anper/Desktop/Programlama_projeler/{str(dispName)}_map.html")
+    m.save(f"{str(dispName)}_map.html")
     
 
 def main(): # The example code for the operations
