@@ -18,7 +18,7 @@ and position data of itself through Wi-Fi module.
 
 School: Izmir Katip Celebi University
 Department: Mechatronics Engineering 
-Class: Sensor
+Class: Sensor Systems
 Main Project Title: Temperature Sensing Mobile Device
 """
 
